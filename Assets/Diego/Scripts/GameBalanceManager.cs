@@ -19,22 +19,11 @@ public class GameBalanceManager : MonoBehaviour
     List<ExplorablePoints> zones = ZoneDatabase.AllZones;
 
 
-    public void zoneProbReduction(int index)
+    void Awake()
     {
-        zones[index].foodProb -= probReduction;
-        zones[index].waterProb -= probReduction;
-        zones[index].EnergyProb -= probReduction;
+        Instance = this;
     }
 
-    public void zoneProbIncrease()
-    {
-        foreach (ExplorablePoints zone in zones)
-        {
-            zone.foodProb += probIncrease;
-            zone.waterProb += probIncrease;
-            zone.EnergyProb += probIncrease;
-        }
-    }
 
     public void resourcesNeedGrowth()
     {
@@ -48,6 +37,24 @@ public class GameBalanceManager : MonoBehaviour
             growthCounter = 3;
         }
     }
+    
+
+    public void zoneProbReduction(int index)
+    {
+        zones[index].foodProb = Mathf.Clamp(zones[index].foodProb - probReduction, 0f, 1f);
+        zones[index].waterProb = Mathf.Clamp(zones[index].waterProb - probReduction, 0f, 1f);
+        zones[index].EnergyProb = Mathf.Clamp(zones[index].EnergyProb - probReduction, 0f, 1f);
+    }       
+
+    public void zoneProbIncrease()
+    {
+        foreach (ExplorablePoints zone in zones)
+        {
+            zone.foodProb = Mathf.Clamp(zone.foodProb + probIncrease, 0f, 1f);
+            zone.waterProb = Mathf.Clamp(zone.waterProb + probIncrease, 0f, 1f);
+            zone.EnergyProb = Mathf.Clamp(zone.EnergyProb + probIncrease, 0f, 1f);
+        }
+    }
 
     public void difZonesScale()
     {
@@ -59,10 +66,10 @@ public class GameBalanceManager : MonoBehaviour
         {
             foreach (ExplorablePoints zone in zones)
             {
-                zone.dangerLevel += difScale;
-                difCounter = 3;  
+                zone.dangerLevel = Mathf.Clamp(zone.dangerLevel + difScale, 0, 100);
             }
-            
+
+            difCounter = 3;
         }
     }
 }

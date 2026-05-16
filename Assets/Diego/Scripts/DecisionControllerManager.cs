@@ -15,9 +15,9 @@ public class DecisionControllerManager : MonoBehaviour
     public TextMeshProUGUI waterText;
     public TextMeshProUGUI energyText;
 
-    int Food = 10;
-    int Water = 10;
-    public int Energy = 10;
+    int Food = 50;
+    int Water = 50;
+    public int Energy = 50;
 
 
 
@@ -70,7 +70,7 @@ public class DecisionControllerManager : MonoBehaviour
     {
         Survivor surv = survivors[MapCanvasManager.Instance.currentSurvIndex];
 
-        if (surv.alive)
+        if (surv.alive && Food > 0)
         {
            if (!surv.busy)
             {
@@ -90,7 +90,7 @@ public class DecisionControllerManager : MonoBehaviour
     {
         Survivor surv = survivors[MapCanvasManager.Instance.currentSurvIndex];
 
-        if (surv.alive)
+        if (surv.alive && Water > 0)
         {
             if (!surv.busy)
             {

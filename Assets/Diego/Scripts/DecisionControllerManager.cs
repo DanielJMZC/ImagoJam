@@ -17,7 +17,7 @@ public class DecisionControllerManager : MonoBehaviour
 
     int Food = 10;
     int Water = 10;
-    int Energy = 10;
+    public int Energy = 10;
 
 
 
@@ -70,14 +70,19 @@ public class DecisionControllerManager : MonoBehaviour
     {
         Survivor surv = survivors[MapCanvasManager.Instance.currentSurvIndex];
 
-        if (!surv.busy)
+        if (surv.alive)
         {
-            survivors[MapCanvasManager.Instance.currentSurvIndex].increaseHunger(2);
-            Food -= 2;
-        }
+           if (!surv.busy)
+            {
+                survivors[MapCanvasManager.Instance.currentSurvIndex].increaseHunger(2);
+                Food -= 2;
+            }
+            
 
-        UpdateResources();
-        MapCanvasManager.Instance.showProfilesInfo(MapCanvasManager.Instance.currentSurvIndex);
+            UpdateResources();
+            MapCanvasManager.Instance.showProfilesInfo(MapCanvasManager.Instance.currentSurvIndex); 
+        }
+        
 
     }
 
@@ -85,14 +90,19 @@ public class DecisionControllerManager : MonoBehaviour
     {
         Survivor surv = survivors[MapCanvasManager.Instance.currentSurvIndex];
 
-        if (!surv.busy)
+        if (surv.alive)
         {
-            survivors[MapCanvasManager.Instance.currentSurvIndex].increaseThirst(2);
-            Water -= 2;
+            if (!surv.busy)
+            {
+                survivors[MapCanvasManager.Instance.currentSurvIndex].increaseThirst(2);
+                Water -= 2;
+            }
+
+            UpdateResources();
+            MapCanvasManager.Instance.showProfilesInfo(MapCanvasManager.Instance.currentSurvIndex);
         }
 
-        UpdateResources();
-        MapCanvasManager.Instance.showProfilesInfo(MapCanvasManager.Instance.currentSurvIndex);
+        
 
     }
 
@@ -100,13 +110,18 @@ public class DecisionControllerManager : MonoBehaviour
     {
         Survivor surv = survivors[MapCanvasManager.Instance.currentSurvIndex];
 
-        if (!surv.busy && surv.currentPlaceIndex == 7)
+        if (surv.alive && !(MapCanvasManager.Instance.currentSurvIndex == 0))
         {
-            surv.currentPlaceIndex = index;
-            surv.busy = true;
-            surv.timeBusy = zones[index].distance;
-        } 
+            if (!surv.busy && surv.currentPlaceIndex == 7)
+            {
+                surv.currentPlaceIndex = index;
+                surv.busy = true;
+                surv.timeBusy = zones[index].distance;
+            } 
 
-        MapCanvasManager.Instance.showProfilesInfo(MapCanvasManager.Instance.currentSurvIndex);
+            MapCanvasManager.Instance.showProfilesInfo(MapCanvasManager.Instance.currentSurvIndex);
+        }
+
+        
     }
 }

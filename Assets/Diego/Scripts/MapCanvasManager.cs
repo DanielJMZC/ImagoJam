@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MapCanvasManager : MonoBehaviour
 {
@@ -12,7 +13,17 @@ public class MapCanvasManager : MonoBehaviour
 
     public int currentSurvIndex;
 
+
+    public float blinkInterval = 1f;
+    public int blinkCount = 3;
+
+
+    public Canvas emergencyCanvas;
+
+    public TextMeshProUGUI emergencyText;
+
     public TextMeshProUGUI infoText;
+
 
     [Header("NameButtonsInfo")]
     public TextMeshProUGUI intP1Text;
@@ -22,6 +33,7 @@ public class MapCanvasManager : MonoBehaviour
     public TextMeshProUGUI Vil2Text;
     public TextMeshProUGUI City1Text;
     public TextMeshProUGUI City2Text;
+
 
     [Header("NameButtonsAction")]
     public TextMeshProUGUI intP1Text2;
@@ -65,6 +77,9 @@ public class MapCanvasManager : MonoBehaviour
 
     void Start()
     {
+
+        emergencyCanvas.gameObject.SetActive(false);
+
         intP1Text.text = zones[0].name;
         intP2Text.text = zones[1].name;
         intP3Text.text = zones[2].name;
@@ -128,18 +143,29 @@ public class MapCanvasManager : MonoBehaviour
     public void showProfilesInfo(int profIndex)
     {
         Survivor surv = survivors[profIndex];
+        string CurrentState = "";
 
         currentSurvIndex = profIndex;
 
         giveFoodButton.gameObject.SetActive(true);
         giveWaterButton.gameObject.SetActive(true);
-        sendPlaceButton.gameObject.SetActive(true);
+        if (profIndex != 0)
+        {
+            sendPlaceButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            sendPlaceButton.gameObject.SetActive(false);
+        }
+        
 
         SendActionButtons.SetActive(false);
         mapInfoButtons.SetActive(true);
 
+        if (surv.alive) CurrentState = "Alive"; else CurrentState = "Dead";
 
-        infoText.text = "Name: " + surv.name + "\n \n"
+        infoText.text = "Name: " + surv.name + "\n"
+                    + "Current State: " + CurrentState + "\n"
                     + "Hunger: " + surv.hunger + "\n"
                     + "Thirst: " + surv.thirst + "\n \n"
         + "Current Place: " + zones[surv.currentPlaceIndex].name;
@@ -151,6 +177,24 @@ public class MapCanvasManager : MonoBehaviour
         SendActionButtons.SetActive(true);
         mapInfoButtons.SetActive(false);
     }
+
+
+    public IEnumerator ShowEmergencyAlert(string text)
+    {
+        emergencyText.text = text;
+
+        for (int i = 0; i < blinkCount; i++)
+        {
+            emergencyCanvas.gameObject.SetActive(true);
+            yield return new WaitForSeconds(blinkInterval);
+
+            emergencyCanvas.gameObject.SetActive(false);
+            yield return new WaitForSeconds(blinkInterval);
+        }
+
+        emergencyCanvas.gameObject.SetActive(false);
+    }
+
 
     
 

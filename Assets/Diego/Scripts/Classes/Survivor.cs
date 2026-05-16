@@ -12,6 +12,8 @@ public class Survivor
 
     public int currentPlaceIndex { get; set; }
 
+    public bool alive { get; set; }
+
 
 
     public void reduceSanity(int val)

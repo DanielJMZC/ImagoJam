@@ -14,7 +14,8 @@ public static class SurvivorDatabase
             busy = false,
             timeBusy = 0,
 
-            currentPlaceIndex  = 7
+            currentPlaceIndex  = 7,
+            alive = true
         },
 
         new Survivor(){
@@ -27,7 +28,8 @@ public static class SurvivorDatabase
             busy = false,
             timeBusy = 0,
 
-            currentPlaceIndex  = 7
+            currentPlaceIndex  = 7,
+            alive = true
         },
 
         new Survivor(){
@@ -40,7 +42,8 @@ public static class SurvivorDatabase
             busy = false,
             timeBusy = 0,
 
-            currentPlaceIndex  = 7
+            currentPlaceIndex  = 7,
+            alive = true
         },
 
         new Survivor(){
@@ -53,7 +56,8 @@ public static class SurvivorDatabase
             busy = false,
             timeBusy = 0,
 
-            currentPlaceIndex  = 7
+            currentPlaceIndex  = 7,
+            alive = true
         },
 
         new Survivor(){
@@ -66,7 +70,8 @@ public static class SurvivorDatabase
             busy = false,
             timeBusy = 0,
 
-            currentPlaceIndex  = 7
+            currentPlaceIndex  = 7,
+            alive = true
         },
 
         new Survivor(){
@@ -79,7 +84,8 @@ public static class SurvivorDatabase
             busy = false,
             timeBusy = 0,
 
-            currentPlaceIndex  = 7
+            currentPlaceIndex  = 7,
+            alive = true
         }
     };
 }

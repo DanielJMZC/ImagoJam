@@ -104,7 +104,7 @@ public class DialogueUI : MonoBehaviour
 
     private IEnumerator TypeText(string text)
     {
-        dialogueText.text = "";
+        dialogueText.text = "                      ";
 
         foreach (char letter in text)
         {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Dialoguetrigger : MonoBehaviour
 {
-    public DialogueConversation dialogue;
+    public NPCDialogueManager npcDialogueManager;
 
     [Header("Interaction Settings")]
     public bool requiresPlayerNearby = true;
@@ -23,6 +23,9 @@ public class Dialoguetrigger : MonoBehaviour
         {
             interactionPrompt.SetActive(false);
         }
+
+        if (npcDialogueManager == null)
+            npcDialogueManager = GetComponent<NPCDialogueManager>();
     }
 
     private void Update()
@@ -45,9 +48,18 @@ public class Dialoguetrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        if (dialogue != null && DialogueManager.Instance != null)
+        if (npcDialogueManager != null && DialogueManager.Instance != null)
         {
-            DialogueManager.Instance.StartConversation(dialogue);
+            
+            DialogueConversation best = npcDialogueManager.GetCurrentConversation();
+            DialogueEntry start = npcDialogueManager.GetStartingDialogue();
+
+            if (best!= null)
+            {
+                DialogueManager.Instance.StartConversation(best, start);
+                Debug.Log(best.conversationID);
+            }
+
         }
     }
 

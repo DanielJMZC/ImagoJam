@@ -32,13 +32,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartConversation(DialogueConversation conversation)
+    public void StartConversation(DialogueConversation conversation, DialogueEntry dialogueEntry)
     {
         if (isInDialogue) return;
 
         currentConversation = conversation;
         bool hasCompleted = completedConversations.Contains(conversation.conversationID);
-        currentDialogue = conversation.GetStartingDialogue(hasCompleted);
+        currentDialogue = dialogueEntry;
 
         isInDialogue = true;
         dialogueUI.Show();

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90db1c39c5c6b437aa28acb7c5e82b31, type: 3}
+  m_Name: BaseConversation 5
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  conversationID: 5
+  conversationName: Second
+  priority: 50
+  startingDialogue:
+    speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
+    emotionalState: default
+    dialogueText: 50 50 50
+    conditions: []
+    voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
+    responses:
+    - responseText: Hey
+      nextDialogue:
+        speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
+        emotionalState: default
+        dialogueText: Diee
+        conditions: []
+        voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
+        responses: []
+        endsConversation: 1
+        eventToTrigger: 
+      conditions: []
+      requiresEvent: 0
+      requiredEventID: 
+    endsConversation: 0
+    eventToTrigger: 
+  isFallback: 0
+  canRepeat: 0
+  repeatDialogue:
+    speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
+    emotionalState: default
+    dialogueText: Dying50
+    conditions: []
+    voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
+    responses: []
+    endsConversation: 1
+    eventToTrigger: 
+  requiredConversations: []

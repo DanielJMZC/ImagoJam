@@ -121,7 +121,6 @@ public class DialogueUI : MonoBehaviour
         {
             StopCoroutine(typingCoroutine);
             typingCoroutine = null;
-            // Show full text immediately
         }
     }
 

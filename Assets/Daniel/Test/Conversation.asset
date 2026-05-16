@@ -15,7 +15,7 @@ MonoBehaviour:
   conversationID: 1
   conversationName: Start
   startingDialogue:
-    speaker: {fileID: 0}
+    speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
     emotionalState: default
     dialogueText: Hey!
     conditions: []
@@ -34,11 +34,37 @@ MonoBehaviour:
       conditions: []
       requiresEvent: 0
       requiredEventID: 
+    - responseText: Play Octopath Please
+      nextDialogue:
+        speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
+        emotionalState: default
+        dialogueText: No
+        conditions: []
+        voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
+        responses: []
+        endsConversation: 1
+        eventToTrigger: 
+      conditions: []
+      requiresEvent: 0
+      requiredEventID: 
+    - responseText: Buy Persona
+      nextDialogue:
+        speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
+        emotionalState: default
+        dialogueText: Yessssss
+        conditions: []
+        voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
+        responses: []
+        endsConversation: 1
+        eventToTrigger: 
+      conditions: []
+      requiresEvent: 0
+      requiredEventID: 
     endsConversation: 0
     eventToTrigger: 
   canRepeat: 1
   repeatDialogue:
-    speaker: {fileID: 0}
+    speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
     emotionalState: default
     dialogueText: Dying
     conditions: []

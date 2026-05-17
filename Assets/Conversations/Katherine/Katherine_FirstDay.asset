@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90db1c39c5c6b437aa28acb7c5e82b31, type: 3}
+  m_Name: Katherine_FirstDay
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  conversationID: Katherine_FirstDay
+  conversationName: Katherine_FirstDay
+  priority: 1000
+  startingDialogue:
+    speaker: {fileID: 11400000, guid: 45296bafd84c84d3993c3e893f75fdf1, type: 2}
+    emotionalState: default
+    dialogueText: First Day with KATHERINE!
+    conditions:
+    - conditionType: 4
+      conditionID: 
+      requiredValue: 0
+      invertCondition: 0
+    voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
+    responses: []
+    endsConversation: 1
+    eventToTrigger: 
+  isFallback: 0
+  canRepeat: 1
+  repeatDialogue:
+    speaker: {fileID: 0}
+    emotionalState: default
+    dialogueText: 
+    conditions: []
+    voiceClip: {fileID: 0}
+    responses: []
+    endsConversation: 0
+    eventToTrigger: 
+  requiredConversations: []

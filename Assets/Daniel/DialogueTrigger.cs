@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Dialoguetrigger : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Dialoguetrigger : MonoBehaviour
     public KeyCode interactionKey = KeyCode.E;
 
     [Header ("Visual Feedback")]
-    public GameObject interactionPrompt;
+    //public GameObject interactionPrompt;
 
     private Transform player;
     private bool playerInRange = false;
@@ -19,11 +20,13 @@ public class Dialoguetrigger : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
-        if (interactionPrompt != null)
-        {
-            interactionPrompt.SetActive(false);
-        }
+/*
+            if (interactionPrompt != null)
+            {
+                interactionPrompt.SetActive(false);
+            }
 
+*/
         if (npcDialogueManager == null)
             npcDialogueManager = GetComponent<NPCDialogueManager>();
     }
@@ -35,10 +38,13 @@ public class Dialoguetrigger : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         playerInRange = distance <= interactionDistance;
 
-        if (interactionPrompt != null)
-        {
-            interactionPrompt.SetActive(playerInRange && !DialogueManager.Instance.IsInDialogue());
-        }
+        /*
+            if (interactionPrompt != null)
+            {
+                interactionPrompt.SetActive(playerInRange && !DialogueManager.Instance.IsInDialogue());
+            }
+
+            */
 
         if (playerInRange && Input.GetKeyDown(interactionKey))
         {
@@ -50,14 +56,15 @@ public class Dialoguetrigger : MonoBehaviour
     {
         if (npcDialogueManager != null && DialogueManager.Instance != null)
         {
-            
+            Debug.Log(DialogueManager.Instance);
             DialogueConversation best = npcDialogueManager.GetCurrentConversation();
+            Debug.Log(best);
             DialogueEntry start = npcDialogueManager.GetStartingDialogue();
+            Debug.Log(start);
 
             if (best!= null)
             {
                 DialogueManager.Instance.StartConversation(best, start);
-                Debug.Log(best.conversationID);
             }
 
         }

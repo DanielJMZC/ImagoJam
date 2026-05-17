@@ -9,7 +9,7 @@ public class MapCanvasManager : MonoBehaviour
     public static MapCanvasManager Instance;
 
     List<ExplorablePoints> zones = ZoneDatabase.AllZones;
-    List<Survivor> survivors = SurvivorDatabase.AllSurvivors;
+    List<Survivor> survivors;
 
     public int currentSurvIndex;
 
@@ -79,6 +79,8 @@ public class MapCanvasManager : MonoBehaviour
     {
 
         emergencyCanvas.gameObject.SetActive(false);
+        survivors = GlobalController.Instance.GetSurvivorList();
+
 
         intP1Text.text = zones[0].name;
         intP2Text.text = zones[1].name;

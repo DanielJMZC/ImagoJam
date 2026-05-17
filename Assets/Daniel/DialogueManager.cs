@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
         currentConversation = conversation;
         bool hasCompleted = completedConversations.Contains(conversation.conversationID);
         currentDialogue = dialogueEntry;
+        Debug.Log("WEEE");
 
         isInDialogue = true;
         dialogueUI.Show();

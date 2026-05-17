@@ -18,8 +18,12 @@ MonoBehaviour:
   startingDialogue:
     speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
     emotionalState: default
-    dialogueText: 20000000000
-    conditions: []
+    dialogueText: IM DEAD
+    conditions:
+    - conditionType: 4
+      conditionID: 1
+      requiredValue: 0
+      invertCondition: 0
     voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
     responses:
     - responseText: Hey

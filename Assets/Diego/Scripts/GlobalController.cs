@@ -7,6 +7,8 @@ public class GlobalController : MonoBehaviour
     public static GlobalController Instance;
 
     public List<Survivor> survivors;
+    public List<NPCDialogueManager> npcDialogueManagers;
+
     List<ExplorablePoints> zones = ZoneDatabase.AllZones;
 
     int day;
@@ -26,6 +28,15 @@ public class GlobalController : MonoBehaviour
     void Start()
     {
         day = 0;
+
+        foreach (var npc in npcDialogueManagers)
+        {
+            
+            if (npc != null)
+            {
+                npc.AssignBestConversation();
+            }
+        }
         Debug.Log("Simulation Started");
     }
 
@@ -33,6 +44,16 @@ public class GlobalController : MonoBehaviour
     {
         day += 1;
         Debug.Log("----- DAY " + day + " -----");
+
+
+        foreach (var npc in npcDialogueManagers)
+        {
+            
+            if (npc != null)
+            {
+                npc.AssignBestConversation();
+            }
+        }
 
         if (!survivors[0].alive) SceneChanger.Instance.changeScene("LoseScene");
 
@@ -208,7 +229,7 @@ public class GlobalController : MonoBehaviour
     }
 
 
-    public int getDay()
+    public int GetDay()
     {
         return day;
     }
@@ -219,5 +240,9 @@ public class GlobalController : MonoBehaviour
             return survivors.FirstOrDefault(s => s.id == index);
     }
 
+    public List<Survivor> GetSurvivorList()
+    {
+        return survivors;
+    }
     
 }

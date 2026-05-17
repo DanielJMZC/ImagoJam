@@ -7,7 +7,7 @@ public class DecisionControllerManager : MonoBehaviour
     public static DecisionControllerManager Instance;
 
     List<ExplorablePoints> zones = ZoneDatabase.AllZones;
-    List<Survivor> survivors = SurvivorDatabase.AllSurvivors;
+    List<Survivor> survivors;
 
 
     [Header("ResourcesText")]
@@ -28,6 +28,8 @@ public class DecisionControllerManager : MonoBehaviour
 
     void Start()
     {
+        survivors = GlobalController.Instance.GetSurvivorList();
+        
         UpdateResources();
     }
 
@@ -139,5 +141,5 @@ public class DecisionControllerManager : MonoBehaviour
     {
         return Energy;
     }
-    
+
 }

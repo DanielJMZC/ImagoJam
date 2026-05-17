@@ -1,3 +1,5 @@
+/*
+
 using System.Collections.Generic;
 
 public static class SurvivorDatabase
@@ -95,3 +97,4 @@ public static class SurvivorDatabase
         }
     };
 }
+*/

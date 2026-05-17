@@ -2,12 +2,13 @@ using UnityEngine;
 
 public enum ConditionType
 {
-    RelationshipLevel,
     HungerValue,
     ThirstValue,
     SanityValue,
     AliveStatus,
-    GameFlag
+
+    DayValue
+    
 }
 
 [System.Serializable]
@@ -57,6 +58,12 @@ public class DialogueCondition
                 }
                 break;
             }
+
+            case ConditionType.DayValue:
+                {
+                    result = GlobalController.Instance?.GetDay() == requiredValue;
+                    break;
+                }
 
         }
 

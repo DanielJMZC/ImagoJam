@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90db1c39c5c6b437aa28acb7c5e82b31, type: 3}
-  m_Name: BaseConversation 10
+  m_Name: Test
   m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
-  conversationID: 10
-  conversationName: Depends
-  priority: 200
+  conversationID: 100
+  conversationName: Food
+  priority: 70
   startingDialogue:
     speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
     emotionalState: default
-    dialogueText: IM DEAD
+    dialogueText: WATER
     conditions:
-    - conditionType: 4
+    - conditionType: 2
       conditionID: 1
-      requiredValue: 0
+      requiredValue: 5
       invertCondition: 0
     voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
     responses:
@@ -39,18 +39,17 @@ MonoBehaviour:
       conditions: []
       requiresEvent: 0
       requiredEventID: 
-    endsConversation: 1
+    endsConversation: 0
     eventToTrigger: 
   isFallback: 0
   canRepeat: 0
   repeatDialogue:
     speaker: {fileID: 11400000, guid: 2fdd9365b852447bba6e69ab0d0fd0e7, type: 2}
     emotionalState: default
-    dialogueText: 200000
+    dialogueText: Dying100
     conditions: []
     voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
     responses: []
     endsConversation: 1
     eventToTrigger: 
-  requiredConversations:
-  - 1
+  requiredConversations: []

@@ -3,6 +3,10 @@ using UnityEngine;
 public enum ConditionType
 {
     RelationshipLevel,
+    HungerValue,
+    ThirstValue,
+    SanityValue,
+    AliveStatus,
     GameFlag
 }
 
@@ -18,31 +22,46 @@ public class DialogueCondition
     {
         bool result = false;
 
-/*
         switch (conditionType)
         {
-            case ConditionType.HasQuest:
-                result = QuestManager.Instance?.HasQuest(conditionID) ?? false;
+            case ConditionType.HungerValue:
+            {
+                if(int.TryParse(conditionID.Trim(), out int survivorID)) {
+                    Debug.Log("Evaluating Hunger Condition for Survivor ID: " + survivorID);
+                    result = GlobalController.Instance?.GetSurvivor(survivorID)?.getHunger() <= requiredValue;
+                }
                 break;
-            case ConditionType.QuestCompleted:
-                result = QuestManager.Instance?.IsQuestCompleted(conditionID) ?? false;
+            }
+
+            case ConditionType.ThirstValue:
+            {
+                if(int.TryParse(conditionID.Trim(), out int survivorID)) {
+                    Debug.Log("Evaluating Thirst Condition for Survivor ID: " + survivorID);
+                    result = GlobalController.Instance?.GetSurvivor(survivorID)?.getThirst() <= requiredValue;
+                }
                 break;
-            case ConditionType.HasItem:
-                result = InventoryManager.Instance?.HasItem(conditionID, requiredValue) ?? false;
+            }
+
+            case ConditionType.SanityValue:
+            {
+                if(int.TryParse(conditionID.Trim(), out int survivorID)) {
+                    result = GlobalController.Instance?.GetSurvivor(survivorID)?.getSanity() <= requiredValue;
+                }
                 break;
-            case ConditionType.RelationshipLevel:
-                result = RelationshipManager.Instance?.GetRelationship(conditionID) >= requiredValue;
+            }
+
+            case ConditionType.AliveStatus:
+            {
+                if(int.TryParse(conditionID.Trim(), out int survivorID)) {
+                    result = GlobalController.Instance?.GetSurvivor(survivorID)?.getAlive() == (requiredValue == 1);
+                }
                 break;
-            case ConditionType.GameFlag:
-                result = GameStateManager.Instance?.GetFlag(conditionID) ?? false;
-                break;
+            }
+
         }
 
         return invertCondition ? !result : result;
 
-        */
-
-        return false;
     }
     
 }

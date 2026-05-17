@@ -57,7 +57,6 @@ public class Dialoguetrigger : MonoBehaviour
             if (best!= null)
             {
                 DialogueManager.Instance.StartConversation(best, start);
-                Debug.Log(best.conversationID);
             }
 
         }

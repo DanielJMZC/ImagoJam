@@ -124,4 +124,20 @@ public class DecisionControllerManager : MonoBehaviour
 
         
     }
+
+    public int GetFood()
+    {
+        return Food;
+    }
+
+    public int GetWater()
+    {
+        return Water;
+    }
+
+    public int GetEnergy()
+    {
+        return Energy;
+    }
+    
 }

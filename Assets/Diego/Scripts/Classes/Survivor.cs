@@ -1,20 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Survivor
+[CreateAssetMenu(fileName = "New Survivor", menuName = "Survivor")]
+public class Survivor : ScriptableObject
 {
-    public string name { get; set; }
+    public string survivorName;
+    public int id;
 
-    public int sanity { get; set; }
-    public int hunger { get; set; }
-    public int thirst { get; set; }
+    public int sanity;
+    public int hunger;
+    public int thirst;
 
-    public bool busy { get; set; }
-    public int timeBusy { get; set; }
+    public bool busy;
+    public int timeBusy;
 
-    public int currentPlaceIndex { get; set; }
+    public int currentPlaceIndex;
 
-    public bool alive { get; set; }
-
-
+    public bool alive;
 
     public void reduceSanity(int val)
     {
@@ -26,7 +29,6 @@ public class Survivor
         sanity += val;
     }
 
-
     public void reduceHunger(int val)
     {
         hunger -= val;
@@ -36,7 +38,6 @@ public class Survivor
     {
         hunger += val;
     }
-
 
     public void reduceThirst(int val)
     {
@@ -48,12 +49,10 @@ public class Survivor
         thirst += val;
     }
 
-
     public void occupy(bool val)
     {
         busy = val;
     }
-
 
     public void reduceTime(int val)
     {
@@ -65,5 +64,27 @@ public class Survivor
         timeBusy += val;
     }
 
-}
+    public int getSanity()
+    {
+        Debug.Log("Sanity value for " + survivorName + ": " + sanity);
+        return sanity;
+    }
 
+    public int getHunger()
+    {
+        Debug.Log("Hunger value for " + survivorName + ": " + hunger);
+        return hunger;
+    }
+
+    public int getThirst()
+    {
+        Debug.Log("Thirst value for " + survivorName + ": " + thirst);
+        return thirst;
+    }
+
+    public bool getAlive()
+    {
+        Debug.Log("Alive status for " + survivorName + ": " + alive);
+        return alive;
+    }
+}

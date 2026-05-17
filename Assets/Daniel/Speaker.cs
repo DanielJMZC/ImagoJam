@@ -5,7 +5,7 @@ public class Speaker : ScriptableObject
 {
     [Header("Character Identity")]
     public string characterName;
-    public string characterID; 
+    public int characterID; 
 
     [Header("Visual Representation")]
     public Sprite defaultPortrait;

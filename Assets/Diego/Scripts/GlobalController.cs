@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GlobalController : MonoBehaviour
 {
     public static GlobalController Instance;
 
-    List<Survivor> survivors = SurvivorDatabase.AllSurvivors;
+    public List<Survivor> survivors;
     List<ExplorablePoints> zones = ZoneDatabase.AllZones;
 
     int day;
@@ -209,4 +210,12 @@ public class GlobalController : MonoBehaviour
     {
         return day;
     }
+
+    public Survivor GetSurvivor(int index)
+    {
+            Debug.Log("ConditionID: '" + index + "'");
+            return survivors.FirstOrDefault(s => s.id == index);
+    }
+
+    
 }

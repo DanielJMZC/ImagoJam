@@ -6,7 +6,8 @@ public class GlobalController : MonoBehaviour
 {
     public static GlobalController Instance;
 
-    public List<Survivor> survivors;
+    List<Survivor> survivors;
+    public List<Survivor> survivorsOriginal;
     public List<NPCDialogueManager> npcDialogueManagers;
 
     List<ExplorablePoints> zones = ZoneDatabase.AllZones;
@@ -23,6 +24,16 @@ public class GlobalController : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        
+        survivors = new List<Survivor>();
+        foreach (var survivor in survivorsOriginal)
+        {
+            Survivor clone = Instantiate(survivor);
+
+            clone.name = survivor.name;
+
+            survivors.Add(clone);
+        }
     }
 
     void Start()

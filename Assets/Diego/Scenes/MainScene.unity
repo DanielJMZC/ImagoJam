@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0e476b0bc34f249ab9fc6bbfdb96d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlobalController
-  survivors:
+  survivorsOriginal:
   - {fileID: 11400000, guid: c30a50caa79dd45acb9d5b5fc442edc6, type: 2}
   - {fileID: 11400000, guid: 6176bc612a0b84b4187b11aaf03aa02a, type: 2}
   - {fileID: 11400000, guid: a4cc32c916318474697cf0c5b347c876, type: 2}
@@ -8209,6 +8209,7 @@ MonoBehaviour:
   dialogueList:
   - {fileID: 11400000, guid: f1607acbdbc3d42479d0e6391962e71b, type: 2}
   - {fileID: 11400000, guid: dc9d20bd7b06140f7be863395d47b8c6, type: 2}
+  - {fileID: 11400000, guid: 2542ec1a7b9b02448805ae38c78af2d3, type: 2}
   currentConversation: {fileID: 0}
 --- !u!114 &1342108319
 MonoBehaviour:

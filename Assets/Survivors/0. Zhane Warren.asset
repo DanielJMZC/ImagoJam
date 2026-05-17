@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Survivor
   survivorName: Zhane Warren
   id: 0
-  sanity: 5
-  hunger: 4
-  thirst: 4
+  sanity: 10
+  hunger: 10
+  thirst: 10
   busy: 0
   timeBusy: 0
   currentPlaceIndex: 7

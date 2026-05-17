@@ -10,8 +10,8 @@ public class CSE_Talking : CutsceneElementBase
     [SerializeField] private string charaName;
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject objectToEnable;
-    [SerializeField] private GameObject objectToEnable2;  
-
+    [SerializeField] private GameObject objectToEnable2;
+    [SerializeField] private float fadeOutWaitTime = 0.3f;
     private bool isTriggered = false;
 
     public override void Execute()
@@ -61,7 +61,7 @@ public class CSE_Talking : CutsceneElementBase
     {
         if (anim != null) anim.Play("FadeOut");
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(fadeOutWaitTime);
 
         if (objectToEnable != null) objectToEnable.SetActive(false);
         if (objectToEnable2 != null) objectToEnable2.SetActive(false);

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AndreaScenes/StartingSequence.unity
     guid: 8931eaa1ce14418459ea8ef655a13347
   - enabled: 1
+    path: Assets/Scenes/AndreaScenes/DestroyedSequence.unity
+    guid: 84d33bfe977c683459a4445efc8d17d8
+  - enabled: 1
     path: Assets/Scenes/AndreaScenes/Test1.unity
     guid: 5028a7f47267973418c25f859e998312
   m_configObjects:

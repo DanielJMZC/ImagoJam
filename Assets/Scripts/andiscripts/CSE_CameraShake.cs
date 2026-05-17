@@ -6,10 +6,11 @@ public class CSE_CameraShake : CutsceneElementBase
     [SerializeField] private float shakeIntensity = 0.5f;
     [SerializeField] private float shakeSpeed = 20f;
     [SerializeField] private CSE_MoveObjectY scriptToStop;
-
+    [SerializeField] private GameObject flashPanel;
+    [SerializeField] private float flashInterval = 0.5f;
     private bool isShaking = false;
     private Vector3 originalCameraPosition;
-
+    private float flashTimer;
     public override void Execute()
     {
         if (scriptToStop != null)
@@ -21,6 +22,12 @@ public class CSE_CameraShake : CutsceneElementBase
         {
             originalCameraPosition = cameraTransform.localPosition;
             isShaking = true;
+        }
+
+        if (flashPanel != null)
+        {
+            flashPanel.SetActive(true);
+            flashTimer = flashInterval;
         }
 
         if (cutsceneHandler != null)
@@ -42,5 +49,15 @@ public class CSE_CameraShake : CutsceneElementBase
             originalCameraPosition.y + offsetY,
             originalCameraPosition.z
         );
+
+        if (flashPanel != null)
+        {
+            flashTimer -= Time.deltaTime;
+            if (flashTimer <= 0f)
+            {
+                flashPanel.SetActive(!flashPanel.activeSelf);
+                flashTimer = flashInterval;
+            }
+        }
     }
 }

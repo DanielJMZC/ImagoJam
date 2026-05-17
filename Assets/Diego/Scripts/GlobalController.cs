@@ -194,6 +194,8 @@ public class GlobalController : MonoBehaviour
         {
             survivor.alive = false;
             Debug.Log(survivor.name + " died from insanity");
+            eliminateNPC(survivor.id);
+
             return;
         }
 
@@ -249,6 +251,8 @@ public class GlobalController : MonoBehaviour
         {
             survivor.alive = false;
             Debug.Log(survivor.name + " died from mental collapse");
+
+            eliminateNPC(survivor.id);
         }
     }
 

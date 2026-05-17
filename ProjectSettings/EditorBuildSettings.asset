@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Diego/Scenes/MainScene.unity
+    guid: 6ffe3efcf7b2b4445966260e3700ada7
+  - enabled: 1
+    path: Assets/Diego/Scenes/LoseScene.unity
+    guid: c00048530a88e314586158c5b831caec
+  - enabled: 1
     path: Assets/Scenes/AndreaScenes/ImagoStudioPresents.unity
     guid: 47668e14fb20f9842ad6e3c0ec03049f
   - enabled: 1

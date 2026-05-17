@@ -56,6 +56,8 @@ public class GlobalController : MonoBehaviour
         }
 
         GameBalanceManager.Instance.zoneProbIncrease();
+        GameBalanceManager.Instance.resourcesNeedGrowth();
+        GameBalanceManager.Instance.difZonesScale();
 
         Debug.Log("Day " + day + " ended");
         MapCanvasManager.Instance.showProfilesInfo(MapCanvasManager.Instance.currentSurvIndex);

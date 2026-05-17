@@ -884,6 +884,11 @@ MonoBehaviour:
   - {fileID: 758401028}
   - {fileID: 880445460}
   - {fileID: 2004530375}
+  Lisa: {fileID: 1342108316}
+  Katherine: {fileID: 1828765541}
+  Jim: {fileID: 758401026}
+  Albert: {fileID: 880445458}
+  Antoine: {fileID: 2004530373}
   charResourcesRedu: 2
 --- !u!4 &131331477
 Transform:

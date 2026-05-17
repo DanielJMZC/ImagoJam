@@ -878,6 +878,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0112cf2f8771444988d1b1a9e9fbb099, type: 2}
   - {fileID: 11400000, guid: 195020f62cce3479cbd61a14401b1a47, type: 2}
   - {fileID: 11400000, guid: cdae263ba62f443f39538579f9f42c18, type: 2}
+  npcDialogueManagers:
+  - {fileID: 1342108318}
+  - {fileID: 1828765543}
+  - {fileID: 758401028}
+  - {fileID: 880445460}
+  - {fileID: 2004530375}
   charResourcesRedu: 2
 --- !u!4 &131331477
 Transform:
@@ -4019,6 +4025,7 @@ Transform:
   - {fileID: 980451585}
   - {fileID: 170388518}
   - {fileID: 582009712}
+  - {fileID: 1426107867}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584590185
@@ -4897,6 +4904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
   dialogueList:
   - {fileID: 11400000, guid: a5c4238401bfe4f7685112718624dbb8, type: 2}
+  - {fileID: 11400000, guid: 16d815ba388124e13b287fc014415e65, type: 2}
   currentConversation: {fileID: 0}
 --- !u!114 &758401029
 MonoBehaviour:
@@ -5546,6 +5554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
   dialogueList:
   - {fileID: 11400000, guid: 775bc0d83cd55466797a3a976b16b691, type: 2}
+  - {fileID: 11400000, guid: 716e804ba742f4f1fb743fe5550a27f9, type: 2}
   currentConversation: {fileID: 0}
 --- !u!114 &880445461
 MonoBehaviour:
@@ -7784,7 +7793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1289114457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8199,6 +8208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
   dialogueList:
   - {fileID: 11400000, guid: f1607acbdbc3d42479d0e6391962e71b, type: 2}
+  - {fileID: 11400000, guid: dc9d20bd7b06140f7be863395d47b8c6, type: 2}
   currentConversation: {fileID: 0}
 --- !u!114 &1342108319
 MonoBehaviour:
@@ -8538,6 +8548,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362373879}
   m_CullTransparentMesh: 1
+--- !u!1 &1426107866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426107867}
+  - component: {fileID: 1426107868}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426107867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426107866}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.85736, y: 24.627499, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 582645031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1426107868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426107866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24016ec941a80452791e5cd3750c52bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  dialogueUI: {fileID: 2079560913}
+  OnDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1429372685
 GameObject:
   m_ObjectHideFlags: 0
@@ -11605,6 +11663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
   dialogueList:
   - {fileID: 11400000, guid: b30f7725c3a434577af094709d682b96, type: 2}
+  - {fileID: 11400000, guid: c6a4821b14596458eaac90c10e4e8e39, type: 2}
   currentConversation: {fileID: 0}
 --- !u!114 &1828765544
 MonoBehaviour:
@@ -12670,6 +12729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
   dialogueList:
   - {fileID: 11400000, guid: 1c94cd1ebe6f1487fba991cdc474820d, type: 2}
+  - {fileID: 11400000, guid: d79c1ead30ff64534b0eb6ccf3000914, type: 2}
   currentConversation: {fileID: 0}
 --- !u!114 &2004530376
 MonoBehaviour:

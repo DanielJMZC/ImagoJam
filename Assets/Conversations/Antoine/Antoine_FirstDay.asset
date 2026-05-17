@@ -12,19 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90db1c39c5c6b437aa28acb7c5e82b31, type: 3}
   m_Name: Antoine_FirstDay
   m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
-  conversationID: FirstDay
-  conversationName: FirstDay
+  conversationID: Antoine_FirstDay
+  conversationName: Antoine_FirstDay
   priority: 1000
   startingDialogue:
     speaker: {fileID: 11400000, guid: bf84bbe7af5a04635ae576118c8fa1b5, type: 2}
     emotionalState: default
     dialogueText: First Day with ANTOINE!
-    conditions: []
+    conditions:
+    - conditionType: 4
+      conditionID: 
+      requiredValue: 0
+      invertCondition: 0
     voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
     responses: []
     endsConversation: 1
     eventToTrigger: 
-  isFallback: 1
+  isFallback: 0
   canRepeat: 1
   repeatDialogue:
     speaker: {fileID: 0}

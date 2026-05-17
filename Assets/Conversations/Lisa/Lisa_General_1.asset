@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90db1c39c5c6b437aa28acb7c5e82b31, type: 3}
   m_Name: Lisa_General_1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
-  conversationID: FirstDay
-  conversationName: FirstDay
-  priority: 1000
+  conversationID: Lisa_General_1
+  conversationName: Lisa_General_1
+  priority: 0
   startingDialogue:
     speaker: {fileID: 11400000, guid: 4332af8775c2c411e82f1f8bc8f26540, type: 2}
     emotionalState: default
-    dialogueText: First Day with LISA!
+    dialogueText: Falling back with LISA!
     conditions: []
     voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
     responses: []

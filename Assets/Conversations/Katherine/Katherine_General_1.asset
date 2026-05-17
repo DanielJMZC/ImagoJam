@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90db1c39c5c6b437aa28acb7c5e82b31, type: 3}
   m_Name: Katherine_General_1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
-  conversationID: FirstDay
-  conversationName: FirstDay
-  priority: 1000
+  conversationID: Katherine_General_1
+  conversationName: Katherine_General_1
+  priority: 0
   startingDialogue:
     speaker: {fileID: 11400000, guid: 45296bafd84c84d3993c3e893f75fdf1, type: 2}
     emotionalState: default
-    dialogueText: First Day with KATHERINE!
+    dialogueText: Falling back with KATHERINE!
     conditions: []
     voiceClip: {fileID: 8300000, guid: 8c4c365e2901444938cb4414e6ff5d4d, type: 3}
     responses: []

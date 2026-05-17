@@ -9,7 +9,8 @@ public class CSE_Talking : CutsceneElementBase
     [SerializeField] private string dialogue;
     [SerializeField] private string charaName;
     [SerializeField] private Animator anim;
-    [SerializeField] private GameObject objectToEnable; 
+    [SerializeField] private GameObject objectToEnable;
+    [SerializeField] private GameObject objectToEnable2;  
 
     private bool isTriggered = false;
 
@@ -21,15 +22,19 @@ public class CSE_Talking : CutsceneElementBase
     private System.Collections.IEnumerator TalkRoutine()
     {
         if (objectToEnable != null) objectToEnable.SetActive(true);
-        if (popUpText != null && popUpText2 != null)  {
-            popUpText.gameObject.SetActive(true);
-            popUpText2.gameObject.SetActive(true);
-        }
+        if (objectToEnable2 != null) objectToEnable2.SetActive(true);
+        
+        if (popUpText != null) popUpText.gameObject.SetActive(true);
+        if (popUpText2 != null) popUpText2.gameObject.SetActive(true);
 
-        if (popUpText != null && popUpText2 != null)
+        if (popUpText != null)
         {
             popUpText.text = dialogue;
             popUpText.ForceMeshUpdate();
+        }
+        
+        if (popUpText2 != null)
+        {
             popUpText2.text = charaName;
             popUpText2.ForceMeshUpdate();
         }
@@ -48,21 +53,24 @@ public class CSE_Talking : CutsceneElementBase
         if (Input.GetButtonDown("Interact"))
         {
             isTriggered = false; 
+            StartCoroutine(FinishDialogueRoutine());
+        }
+    }
 
-            if (anim != null) anim.Play("FadeOut");
-            
-            if (objectToEnable != null && popUpText != null && popUpText2 != null)
-            {
-                objectToEnable.SetActive(false);
-                popUpText.gameObject.SetActive(false);
-                popUpText2.gameObject.SetActive(false);
-            }
-            
-            if (cutsceneHandler != null)
-            {
-                cutsceneHandler.PlayNextElement();
-            }
+    private System.Collections.IEnumerator FinishDialogueRoutine()
+    {
+        if (anim != null) anim.Play("FadeOut");
+        
+        yield return new WaitForSeconds(1f);
+
+        if (objectToEnable != null) objectToEnable.SetActive(false);
+        if (objectToEnable2 != null) objectToEnable2.SetActive(false);
+        if (popUpText != null) popUpText.gameObject.SetActive(false);
+        if (popUpText2 != null) popUpText2.gameObject.SetActive(false);
+        
+        if (cutsceneHandler != null)
+        {
+            cutsceneHandler.PlayNextElement();
         }
     }
 }
-

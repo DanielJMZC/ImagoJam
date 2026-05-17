@@ -11,6 +11,14 @@ public class GlobalController : MonoBehaviour
 
     List<ExplorablePoints> zones = ZoneDatabase.AllZones;
 
+    [Header("NPCs")]
+    public GameObject Lisa;
+    public GameObject Katherine;
+    public GameObject Jim;
+    public GameObject Albert;
+    public GameObject Antoine;
+
+
     int day;
     float attackProb = 0.20f;
     float randAttack;
@@ -31,7 +39,7 @@ public class GlobalController : MonoBehaviour
 
         foreach (var npc in npcDialogueManagers)
         {
-            
+
             if (npc != null)
             {
                 npc.AssignBestConversation();
@@ -48,7 +56,7 @@ public class GlobalController : MonoBehaviour
 
         foreach (var npc in npcDialogueManagers)
         {
-            
+
             if (npc != null)
             {
                 npc.AssignBestConversation();
@@ -109,6 +117,8 @@ public class GlobalController : MonoBehaviour
                     {
                         survivor.alive = false;
                         Debug.Log(survivor.name + " died during base attack");
+
+                        eliminateNPC(survivor.id);
                     }
                 }
             }
@@ -143,13 +153,15 @@ public class GlobalController : MonoBehaviour
                         {
                             survivor.alive = false;
                             Debug.Log(survivor.name + " died during base attack");
+
+                            eliminateNPC(survivor.id);
                         }
                     }
                 }
 
                 DecisionControllerManager.Instance.UpdateResources();
             }
-        
+
         }
     }
 
@@ -236,13 +248,40 @@ public class GlobalController : MonoBehaviour
 
     public Survivor GetSurvivor(int index)
     {
-            Debug.Log("ConditionID: '" + index + "'");
-            return survivors.FirstOrDefault(s => s.id == index);
+        Debug.Log("ConditionID: '" + index + "'");
+        return survivors.FirstOrDefault(s => s.id == index);
     }
 
     public List<Survivor> GetSurvivorList()
     {
         return survivors;
     }
-    
+
+    public void eliminateNPC(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                Destroy(Lisa.gameObject);
+                break;
+
+            case 2:
+                Destroy(Katherine.gameObject);
+                break;
+
+            case 3:
+                Destroy(Jim.gameObject);
+                break;
+
+            case 4:
+                Destroy(Albert.gameObject);
+                break;
+
+            case 5:
+                Destroy(Antoine.gameObject);
+                break;
+
+        }
+
+    }
 }

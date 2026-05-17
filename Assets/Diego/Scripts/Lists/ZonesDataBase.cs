@@ -7,11 +7,11 @@ public static class ZoneDatabase
         new ExplorablePoints()
     
         {
-            name = "Abandoned Camp",
+            name = "Old Storage",
             dangerLevel = 2,
             foodProb = 0.65f,
             waterProb = 0.60f,
-            EnergyProb = 0.40f,
+            EnergyProb = 0.10f,
             maxFood = 15,
             maxWater = 15,
             maxEnergy = 8,
@@ -20,10 +20,10 @@ public static class ZoneDatabase
 
         new ExplorablePoints()
         {
-            name = "Destroyed Gas Station",
-            dangerLevel = 3,
-            foodProb = 0.50f,
-            waterProb = 0.45f,
+            name = "Corrupted Tree",
+            dangerLevel = 6,
+            foodProb = 0.55f,
+            waterProb = 0.55f,
             EnergyProb = 0.65f,
             maxFood = 10,
             maxWater = 8,
@@ -34,11 +34,11 @@ public static class ZoneDatabase
         new ExplorablePoints()
         {
             name = "Collapsed Investigation Center",
-            dangerLevel = 4,
-            foodProb = 0.40f,
-            waterProb = 0.50f,
-            EnergyProb = 0.70f,
-            maxFood = 8,
+            dangerLevel = 5,
+            foodProb = 0.50f,
+            waterProb = 0.10f,
+            EnergyProb = 0.60f,
+            maxFood = 10,
             maxWater = 10,
             maxEnergy = 18,
             distance = 3
@@ -49,27 +49,27 @@ public static class ZoneDatabase
 
         new ExplorablePoints()
         {
-            name = "Phantom Village",
+            name = "Hospital",
             dangerLevel = 5,
-            foodProb = 0.70f,
-            waterProb = 0.65f,
-            EnergyProb = 0.55f,
-            maxFood = 30,
-            maxWater = 25,
-            maxEnergy = 20,
+            foodProb = 0.15f,
+            waterProb = 0.75f,
+            EnergyProb = 0.15f,
+            maxFood = 15,
+            maxWater = 30,
+            maxEnergy = 10,
             distance = 4
         },
 
         new ExplorablePoints()
         {
-            name = "Inhospitable Refuge",
+            name = "Nuclear Plant",
             dangerLevel = 6,
-            foodProb = 0.75f,
-            waterProb = 0.70f,
-            EnergyProb = 0.60f,
-            maxFood = 35,
-            maxWater = 30,
-            maxEnergy = 25,
+            foodProb = 0.25f,
+            waterProb = 0.30f,
+            EnergyProb = 0.90f,
+            maxFood = 25,
+            maxWater = 20,
+            maxEnergy = 60,
             distance = 5
         },
 
@@ -96,9 +96,9 @@ public static class ZoneDatabase
             foodProb = 0.95f,
             waterProb = 0.90f,
             EnergyProb = 0.95f,
-            maxFood = 100,
+            maxFood = 80,
             maxWater = 80,
-            maxEnergy = 90,
+            maxEnergy = 70,
             distance = 10
         },
 
